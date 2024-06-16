@@ -47,6 +47,7 @@
 // Page setup
 #set page(paper: "a4")
 #set text(font: ("Source Sans Pro", "Roboto"), 12pt, ccdarkslategray)
+#show link: set text(ccorange)
 #set heading(numbering: "1.1.a")
 #show heading: it => {
   set text(fill: cctomato)
@@ -139,6 +140,10 @@ A port of the `ccicon` LaTeX package for Typst.
 #ccico adds commands to add Creative Commons license logos to your document.
 
 It is a port of the LaTeX package by the same name by Michael Ummels.
+
+Please note that all icons in this package are trademarks of Creative Commons and are subject to the Creative Commons trademark policy (see #link("http://creativecommons.org/policies", "http://creativecommons.org/policies")).
+
+The SVG files distributed in this package are available on #link("https://creativecommons.org/mission/downloads/", "the Creative Commons website") and licensed under #link("https://creativecommons.org/licenses/by/4.0/", "Creative Commons Attribution 4.0 International license").
 
 = Usage
 

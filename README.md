@@ -9,12 +9,25 @@ Creative Commons icons for your Typst documents</div>
 
 ## Getting Started
 
+> [!IMPORTANT]
+> As of now, the package is not published in the Typst Universe, but should be in the next few days.
+
 Import the package into your document:
 
 ```typ
 #import "@preview/ccicons:1.0.0": *
 ```
 
-> [!IMPORTANT]
-> As of now, the package is not published in the Typst Universe, but should be in the next few days.
+Start using license icons:
 
+```typst
+#cc-by-nc-sa
+```
+
+See the [the manual](docs/ccicons-manual.pdf) for more details and an overview all available Creative Commons icons.
+
+# License
+
+Please note that all icons that can be typeset using this package are trademarks of Creative Commons and are subject to the Creative Commons trademark policy (see http://creativecommons.org/policies).
+
+The symbols in this font have been obtained from https://creativecommons.org/mission/downloads/ and released by Creative Commons under a Creative Commons Attribution 4.0 International license: https://creativecommons.org/licenses/by/4.0/
