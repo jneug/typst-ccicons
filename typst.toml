@@ -2,7 +2,7 @@
 
 [package]
 name = "ccicons"
-version = "1.0.0"
+version = "1.0.1"
 entrypoint = "src/ccicons.typ"
 authors = ["J. Neugebauer"]
 license = "MIT"

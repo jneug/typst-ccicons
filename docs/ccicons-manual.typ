@@ -56,11 +56,14 @@
     inset: (bottom: .33em),
     stroke: (bottom: .6pt + ccdarkturquoise),
     [#if it.numbering != none {
-        text(
-          weight: "semibold",
-          ccdarkturquoise,
-          counter(heading.where(level: it.level)).display(it.numbering),
-        ) + h(1.28em)
+        (
+          text(
+            weight: "semibold",
+            ccdarkturquoise,
+            counter(heading.where(level: it.level)).display(it.numbering),
+          )
+            + h(1.28em)
+        )
       } #it.body],
   )
 }
@@ -86,9 +89,7 @@
   row-gutter: .64em,
   code,
   {
-    example(
-      eval("#import ccicons: *\n" + code.text, mode: "markup", scope: (ccicons: ccicons)),
-    )
+    example(eval("#import ccicons: *\n" + code.text, mode: "markup", scope: (ccicons: ccicons)))
 
     place(
       right + top,

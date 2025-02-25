@@ -69,11 +69,13 @@ _ccicon-all-keys = _ccicon-all-keys.dedup()
 
 #let _cc-colorize(icon-file, fill: black, ..args) = {
   let svg-data = read(icon-file)
-  svg-data = svg-data.replace("<path", "<path style=\"fill:" + fill.to-hex() + "\"").replace(
-    "<polygon",
-    "<polygon style=\"fill:" + fill.to-hex() + "\"",
-  )
-  return image.decode(..args.named(), svg-data)
+  svg-data = svg-data
+    .replace("<path", "<path style=\"fill:" + fill.to-hex() + "\"")
+    .replace(
+      "<polygon",
+      "<polygon style=\"fill:" + fill.to-hex() + "\"",
+    )
+  return image(..args.named(), format: "svg", bytes(svg-data))
 }
 
 #let _cc-resolve-name(name) = {
@@ -159,17 +161,18 @@ _ccicon-all-keys = _ccicon-all-keys.dedup()
 
   let icon
   if cc-info.format == "icon" {
-    icon = cc-info.parts.map(name => box(context _cc-colorize(
-      height: .75em * scale,
-      "assets/svg/icon/" + name + ".svg",
-      fill: if fill == auto {
-        text.fill
-      } else {
-        fill
-      },
-    ))).join(
-      h(1.5pt),
-    )
+    icon = cc-info
+      .parts
+      .map(name => box(context _cc-colorize(
+        height: .75em * scale,
+        "assets/svg/icon/" + name + ".svg",
+        fill: if fill == auto {
+          text.fill
+        } else {
+          fill
+        },
+      )))
+      .join(h(1.5pt))
   } else {
     if not cc-info.license.starts-with("cc") {
       cc-info.license = "cc-" + cc-info.license
